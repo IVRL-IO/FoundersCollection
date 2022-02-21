@@ -1,0 +1,34 @@
+{
+  "title": "Asset Metadata",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "IVRL Founder's Collection #4"
+    },
+    "description": {
+      "type": "string",
+      "description": "IVRL Founder's Collection NFT #4. Perks include but not limited to: Initial Game Currencies, land in games, and higher priority during sales. See \"Redemptions\" on https://ivrl.io"
+    },
+    "image": {
+      "type": "string",
+      "description": "https://nft.ivrl.io/IVRLFoundersCollection/4/thumbnail.png"
+    },
+    "imageFull": {
+      "type": "string",
+      "description": "https://nft.ivrl.io/IVRLFoundersCollection/4/image.png"
+    },
+    "tokenId": {
+      "type": "number",
+      "description": 4
+    },
+    "firstSaleCost": {
+      "type": "number",
+      "description": 55
+    },
+    "basisPointShares": {
+      "type": "number",
+      "description": 625
+    }
+  }
+}
