@@ -2,102 +2,64 @@
 <html lang="en" style=" width: 100%; height:100%;">
 <head>
     <meta charset="UTF-8">
-    <title>IVRL | Founder's Collection | #1</title>
-    <style type="text/css">
-        .wrapper {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            column-gap: 10px;
-            row-gap:: 10px;
-
-        }
-
-        .box {
-            color: #FFF;
-            border: 1px solid mediumpurple;
-            padding: 10px;
-            margin-top: 10px
-        }
-
-        .box1 {
-            grid-column-start: 1;
-            grid-column-end: 6;
-            max-width: 1150px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .box2 {
-            grid-column-start: 1;
-            grid-column-end: 6;
-            max-width: 42500px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .box3 {
-            grid-column-start: 1;
-            text-align: center;
-        }
-
-        .box4 {
-            grid-column-start: 2;
-            text-align: center;
-        }
-
-        .box5 {
-            grid-column-start: 3;
-            text-align: center;
-        }
-
-        .box6 {
-            grid-column-start: 4;
-            text-align: center;
-        }
-
-        .box7 {
-            grid-column-start: 5;
-            text-align: center;
-        }
-
-        .img {
-            box-sizing: border-box;
-            display: block;
-            object-fit: contain;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            border: 0;
-            padding: 3px;
-        }
-
-    </style>
+    <title>IVRL | Founder's Collection | </title>
+    <link rel="stylesheet" href="../css/common.css"/>
 </head>
-<body style=" width: 100%; height:100%;background-color: #000; ">
+<body>
 <div style="margin:auto;width: 90%; height:90%;text-align: center;">
     <div style="margin-left: auto;margin-right: auto;width:400px">
         <a href="/FoundersCollection/"><img alt="Logo: IVRL - Bridging Realities" src="/img/IVRL_Logo_Wormhole.svg" style="max-width: 300px;float:left;margin-top:10px;margin-left: 10px"/></a>
     </div>
     <div style="clear:both;margin-top:10px">&nbsp;</div>
-    <div class="wrapper">
-        <div class="box box2">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#1 Ultra Rare</div>
+    <div id="target">Loading...</div>
+    <script id="template" type="x-tmpl-mustache">
+                <div class="wrapper">
+                    <div class="box box2">
+                        <div class="img">
+                            <div style="font-size: xxx-large;display: block;">{{properties.name.description}}</div>
 
-                <a href="1.png"><img alt="Founders Collection #1" src="1.Thumbnail.png" style="max-width: 400px"/>
-                </a>
-                <div><b>Original list price 385.09 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box1" style="text-align: justify;font-size: xx-large">
-            One of a kind painting with most perks. You are truly the one owning this.
-        </div>
+                            <a href="{{properties.tokenId.description}}
+        /index.html"><img alt="{{properties.name.description}}"
+                            src="{{#localURI}}{{properties.image.description}}{{/localURI}}" style="max-width: 400px"/>
+                            </a>
+                            <div style="font-size:large;"><b>Original list price {{properties.firstSaleCost.description}} Ethereum</b></div>
+                        </div>
+                    </div>
+                    <div class="box box2" style="text-align: justify;font-size: x-large">
+                        {{properties.description.description}}
+                    </div>
+                </div>
 
 
-        <div style="clear:both;margin-top:10px">&nbsp;</div>
 
-    </div>
+    </script>
+    <div style="clear:both;margin-top:10px">&nbsp;</div>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script type="text/javascript">
+        const baseURL = "https://nft.ivrl.io/IVRLFoundersCollection/";
 
+        function decodeHTML(str) {
+            let txt = document.createElement("input");
+            txt.innerHTML = str;
+            return txt.innerText;
+        };
+        fetch("metadata.json")
+                .then(response => {
+                    return response.json();
+                }).then(data => {
+            data.localURI = function () {
+                return function (text, render) {
+                    const decoded = decodeHTML(render(text));
+                    return decoded.replace(`${baseURL}${data.properties.tokenId.description}/`, "");
+                }
+            }
+            const template = document.getElementById('template').innerHTML;
+            const rendered = Mustache.render(template, data);
+            document.getElementById('target').innerHTML = rendered;
+            document.title = data.properties.name.description;
+        });
+
+    </script>
+</div>
 </body>
 </html>

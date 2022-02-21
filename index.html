@@ -87,7 +87,7 @@
         <img alt="IVRL Founder's Collection album cover" src="img/IVRL_Founders_Collection.png" style="max-width: 800px;float:left;padding-left:20px"/>
     </div>
     <div style="clear:both;margin-top:10px">&nbsp;</div>
-    <div class="wrapper">
+    <div id="target" class="wrapper">
         <div class="box box1" style="text-align: justify;font-size: x-large">
             The IVRL Founder's Collection is a limited set of 11 NTF's designed to further fund our company. These are
             the
@@ -140,97 +140,80 @@
 
 
         </div>
-        <div class="box box2">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#1 Ultra Rare</div>
-
-                <a href="1/index.html"><img alt="Founders Collection #1" src="1/1.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 410 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box3">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#2 Limited Edition Rare</div>
-                <a href="2/index.html"><img alt="Founders Collection #2" src="2/2.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 205 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box4">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#3 Rare</div>
-                <a href="3/index.html"><img alt="Founders Collection #3" src="3/3.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 105 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box5">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#4</div>
-                <a href="4/index.html"><img alt="Founders Collection #4" src="4/4.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 55 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box6">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#5</div>
-                <a href="5/index.html"><img alt="Founders Collection #5" src="5/5.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 25 Ethereum</b></div>
-            </div>
-        </div>
-        <!--<div class="box box7">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#6</div>
-                <a href="1/index.html"><img alt="Founders Collection #1" src="1/1.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 362.53 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box3">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#7</div>
-                <a href="1/index.html"><img alt="Founders Collection #1" src="1/1.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 362.53 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box4">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#8</div>
-                <a href="1/index.html"><img alt="Founders Collection #1" src="1/1.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 362.53 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box5">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#9</div>
-                <a href="1/index.html"><img alt="Founders Collection #1" src="1/1.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 362.53 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box6">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#10</div>
-                <a href="1/index.html"><img alt="Founders Collection #1" src="1/1.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 362.53 Ethereum</b></div>
-            </div>
-        </div>
-        <div class="box box7">
-            <div class="img">
-                <div style="font-size: xx-large;display: block;">#11</div>
-                <a href="1/index.html"><img alt="Founders Collection #1" src="1/1.Thumbnail.png" style="max-width: 250px"/>
-                </a>
-                <div><b>Original list price 362.53 Ethereum</b></div>
-            </div>
-        </div>-->
     </div>
+    <script id="template" type="x-tmpl-mustache">
+            <div class="box {{#cssBox}}{{properties.tokenId.description}}{{/cssBox}}">
+                <div class="img">
+                    <div style="font-size: xx-large;display: block;">{{properties.name.description}}</div>
+
+                    <a href="{{properties.tokenId.description}}/index.html"><img alt="{{properties.name.description}}
+        " src="{{#localURI}}{{properties.image.description}}{{/localURI}}" style="max-width: 250px"/>
+                    </a>
+                    <div><b>Original list price {{properties.firstSaleCost.description}} Ethereum</b></div>
+                </div>
+            </div>
+
+    </script>
     <div style="clear:both;margin-top:10px">&nbsp;</div>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script type="text/javascript">
+        const baseURL = "https://nft.ivrl.io/IVRLFoundersCollection/";
+
+        function decodeHTML(str) {
+            let txt = document.createElement("input");
+            txt.innerHTML = str;
+            return txt.innerText;
+        };
+        const notFinished = [];
+
+        function loadMetadata(data) {
+            data.cssBox = function () {
+                return function (text, render) {
+                    if (Number.isNaN(render(text))) return "";
+                    let tokenId = Number(render(text));
+                    if (tokenId < 7) {
+                        return `box${tokenId + 1}`;
+                    }
+                    if (tokenId >= 7) {
+                        return `box${tokenId - 4}`;
+                    }
+                }
+            }
+            data.localURI = function () {
+                return function (text, render) {
+                    const decoded = decodeHTML(render(text));
+                    for (let i = 0; i < notFinished.length; i++) {
+                        if (decoded.indexOf(notFinished[i].toString()) !== -1) {
+                            return "1/thumbnail.png";
+                        }
+                    }
+                    ;
+                    return decoded.replace(baseURL, "");
+                }
+            }
+            const template = document.getElementById('template').innerHTML;
+            const rendered = Mustache.render(template, data);
+            document.getElementById('target').innerHTML += rendered;
+            let nextTokenId = data.properties.tokenId.description + 1;
+            if (nextTokenId <= 11) {
+                fetch(`${nextTokenId}/metadata.json`)
+                        .then(response => {
+                            return response.json();
+                        }).then(data => {
+                    loadMetadata(data);
+                });
+            }
+        }
+
+        fetch(`1/metadata.json`)
+                .then(response => {
+                    return response.json();
+                }).then(data => {
+            loadMetadata(data);
+        });
+
+
+    </script>
 
 </div>
 
