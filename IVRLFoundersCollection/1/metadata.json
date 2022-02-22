@@ -4,7 +4,10 @@
   "external_url": "https://nft.ivrl.io/IVRLFoundersCollection/1/",
   "image": "https://nft.ivrl.io/IVRLFoundersCollection/1/thumbnail.png",
   "properties": {
-    "imageFull": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
+    "imageFull": {
+      "value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
+      "display_type": "url"
+    },
     "tokenId": {
       "value": 1,
       "display_type": "prop"
@@ -14,8 +17,8 @@
       "display_type": "prop"
     },
     "basisPointShares": {
-      "value": 500,
-      "display_type": "prop"
+      "value": 5000,
+      "display_type": "stats"
     }
   }
 }
