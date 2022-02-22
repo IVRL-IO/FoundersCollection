@@ -4,10 +4,7 @@
   "external_url": "https://nft.ivrl.io/IVRLFoundersCollection/1/",
   "image": "https://nft.ivrl.io/IVRLFoundersCollection/1/thumbnail.png",
   "properties": {
-    "imageFull": {
-      "type": "string",
-      "description": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png"
-    },
+    "imageFull": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
     "tokenId": 1,
     "firstSaleCost": 410,
     "basisPointShares": 500
