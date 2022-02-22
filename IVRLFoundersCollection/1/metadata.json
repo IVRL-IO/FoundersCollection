@@ -1,34 +1,15 @@
 {
-  "title": "Asset Metadata",
-  "type": "object",
+  "name": "IVRL Founder's Collection #1",
+  "description": "IVRL Founder's Collection NFT #1. This is one you want to own! Perks include but not limited to: Initial Game Currencies, land in games, and higher priority during sales. See \\\"Redemptions\\\" on https://ivrl.io\"",
+  "external_url": "https://nft.ivrl.io/IVRLFoundersCollection/1/",
+  "image": "https://nft.ivrl.io/IVRLFoundersCollection/1/thumbnail.png",
   "properties": {
-    "name": {
-      "type": "string",
-      "description": "IVRL Founder's Collection #1"
-    },
-    "description": {
-      "type": "string",
-      "description": "IVRL Founder's Collection NFT #1. This is one you want to own! Perks include but not limited to: Initial Game Currencies, land in games, and higher priority during sales. See \"Redemptions\" on https://ivrl.io"
-    },
-    "image": {
-      "type": "string",
-      "description": "https://nft.ivrl.io/IVRLFoundersCollection/1/thumbnail.png"
-    },
     "imageFull": {
       "type": "string",
       "description": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png"
     },
-    "tokenId": {
-      "type": "number",
-      "description": 1
-    },
-    "firstSaleCost": {
-      "type": "number",
-      "description": 410
-    },
-    "basisPointShares": {
-      "type": "number",
-      "description": 5000
-    }
+    "tokenId": 1,
+    "firstSaleCost": 410,
+    "basisPointShares": 500
   }
 }
