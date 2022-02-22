@@ -5,8 +5,17 @@
   "image": "https://nft.ivrl.io/IVRLFoundersCollection/1/thumbnail.png",
   "properties": {
     "imageFull": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
-    "tokenId": 1,
-    "firstSaleCost": 410,
-    "basisPointShares": 500
+    "tokenId": {
+      "value": 1,
+      "display_type": "prop"
+    },
+    "firstSaleCost": {
+      "value": 410,
+      "display_type": "prop"
+    },
+    "basisPointShares": {
+      "value": 500,
+      "display_type": "prop"
+    }
   }
 }
