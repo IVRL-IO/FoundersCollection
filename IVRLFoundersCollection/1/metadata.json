@@ -6,19 +6,23 @@
   "properties": {
     "imageFull": {
       "value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
-      "display_type": "url"
+      "display_type": "url",
+      "trait_type": "High Resolution"
     },
     "tokenId": {
       "value": 1,
-      "display_type": "prop"
+      "display_type": "prop",
+      "trait_type": "Founder's Card #"
     },
     "firstSaleCost": {
       "value": 410,
-      "display_type": "prop"
+      "display_type": "prop",
+      "trait_type": "Initial Cost"
     },
     "basisPointShares": {
       "value": 5000,
-      "display_type": "stats"
+      "display_type": "boosts",
+      "trait_type": "Basis Point Rewards"
     }
   }
 }
