@@ -6,21 +6,26 @@
   "attributes": [
     {
       "name": "High Resolution",
+      "trait_type": "imageFull",
       "value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
       "display_value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png"
     },
     {
       "name": "Founder's Card #",
+      "trait_type": "tokenId",
       "value": 1,
-      "display_value": "#1"
+      "display_value": "#1",
+      "display_type": "number"
     },
     {
       "name": "First Sale Cost",
+      "trait_type": "firstSaleCost",
       "value": 410,
       "display_value": "410 WETH"
     },
     {
-      "name": "Basis Point Rewards",
+      "name": "basisPointShares",
+      "trait_type": "Basis Point Rewards",
       "value": 5000,
       "display_value": "5000 BPS",
       "display_type": "boost_number"
