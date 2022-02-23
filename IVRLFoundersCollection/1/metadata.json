@@ -5,22 +5,22 @@
   "image": "https://nft.ivrl.io/IVRLFoundersCollection/1/thumbnail.png",
   "attributes": [
     {
-      "name": "High Resolution",
-      "trait_type": "imageFull",
+      "name": "imageFull",
+      "trait_type": "High Resolution",
       "value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
       "display_value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
       "display_type": "url"
     },
     {
-      "name": "Founder's Card #",
-      "trait_type": "tokenId",
+      "name": "tokenId",
+      "trait_type": "Founder's Card #",
       "value": 1,
       "display_value": "#1",
       "display_type": "number"
     },
     {
-      "name": "First Sale Cost",
-      "trait_type": "firstSaleCost",
+      "name": "firstSaleCost",
+      "trait_type": "First Sale Cost",
       "value": 410,
       "display_value": "410 WETH",
       "display_type": "number"
