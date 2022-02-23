@@ -8,7 +8,8 @@
       "name": "High Resolution",
       "trait_type": "imageFull",
       "value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
-      "display_value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png"
+      "display_value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
+      "display_type": "url"
     },
     {
       "name": "Founder's Card #",
@@ -21,7 +22,8 @@
       "name": "First Sale Cost",
       "trait_type": "firstSaleCost",
       "value": 410,
-      "display_value": "410 WETH"
+      "display_value": "410 WETH",
+      "display_type": "number"
     },
     {
       "name": "basisPointShares",
