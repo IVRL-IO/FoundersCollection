@@ -12,17 +12,15 @@
       },
       "2": {
         "value": 1,
-        "display_type": "prop",
         "trait_type": "Founder's Card #"
       },
       "3": {
         "value": 410,
-        "display_type": "prop",
         "trait_type": "Initial Cost"
       },
       "4": {
         "value": 5000,
-        "display_type": "boosts",
+        "display_type": "boost_number",
         "trait_type": "Basis Point Rewards"
       }
     }
