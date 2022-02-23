@@ -3,7 +3,7 @@
   "description": "IVRL Founder's Collection NFT #1. This is one you want to own! Perks include but not limited to: Initial Game Currencies, land in games, and higher priority during sales. See \\\"Redemptions\\\" on https://ivrl.io\"",
   "external_url": "https://nft.ivrl.io/IVRLFoundersCollection/1/",
   "image": "https://nft.ivrl.io/IVRLFoundersCollection/1/thumbnail.png",
-  "properties": {
+  "attributes": {
     "imageFull": {
       "name": "High Resolution",
       "value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png",
