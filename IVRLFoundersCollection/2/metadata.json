@@ -2,10 +2,34 @@
   "name": "IVRL Founder's Collection #2",
   "description": "IVRL Founder's Collection NFT #2. Perks include but not limited to: Initial Game Currencies, land in games, and higher priority during sales. See \"Redemptions\" on https://ivrl.io"
   "image": "https://nft.ivrl.io/IVRLFoundersCollection/2/thumbnail.png",
-  "properties": {
-    "imageFull": "https://nft.ivrl.io/IVRLFoundersCollection/2/image.png",
-    "tokenId": 2,
-    "firstSaleCost": 205,
-    "basisPointShares": 2500
-  }
+  "attributes": [
+    {
+      "name": "imageFull",
+      "trait_type": "High Resolution",
+      "value": "https://nft.ivrl.io/IVRLFoundersCollection/2/image.png",
+      "display_value": "https://nft.ivrl.io/IVRLFoundersCollection/2/image.png",
+      "display_type": "url"
+    },
+    {
+      "name": "tokenId",
+      "trait_type": "Founder's Card #",
+      "value": 2,
+      "display_value": "#2",
+      "display_type": "number"
+    },
+    {
+      "name": "firstSaleCost",
+      "trait_type": "First Sale Cost",
+      "value": 205,
+      "display_value": "205 WETH",
+      "display_type": "number"
+    },
+    {
+      "name": "basisPointShares",
+      "trait_type": "Basis Point Rewards",
+      "value": 2500,
+      "display_value": "2500 BPS",
+      "display_type": "boost_number"
+    }
+  ]
 }
