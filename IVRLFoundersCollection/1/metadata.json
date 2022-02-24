@@ -11,18 +11,18 @@
       "display_value": "https://nft.ivrl.io/IVRLFoundersCollection/1/image.png"
     },
     {
+      "name": "firstSaleCost",
+      "trait_type": "First Sale Cost",
+      "value": "410",
+      "display_value": "410 WETH"
+    },
+    {
       "name": "tokenId",
       "trait_type": "Founder's Card #",
       "value": 1,
       "display_value": "#1",
       "display_type": "number",
       "max_value": 11
-    },
-    {
-      "name": "firstSaleCost",
-      "trait_type": "First Sale Cost",
-      "value": "410",
-      "display_value": "410 WETH"
     },
     {
       "name": "basisPointShares",
