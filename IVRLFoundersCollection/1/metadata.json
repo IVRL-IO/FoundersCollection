@@ -15,7 +15,8 @@
       "trait_type": "Founder's Card #",
       "value": 1,
       "display_value": "#1",
-      "display_type": "number"
+      "display_type": "number",
+      "max_value": 11
     },
     {
       "name": "firstSaleCost",
