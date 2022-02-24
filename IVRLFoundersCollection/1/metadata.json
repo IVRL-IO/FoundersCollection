@@ -22,7 +22,7 @@
       "name": "firstSaleCost",
       "trait_type": "First Sale Cost",
       "value": 410,
-      "display_value": "410 WETH",
+      "display_value": "410 WETH"
     },
     {
       "name": "basisPointShares",
